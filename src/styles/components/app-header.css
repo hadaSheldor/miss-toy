@@ -1,0 +1,24 @@
+.main-header {
+  background-color: var(--clr11);
+  color: var(--clr2);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+}
+
+.link-btn {
+  margin: 1rem;
+  font-size: 1.2rem;
+  color: var(--clr8);
+  text-decoration: none;
+  font-variant: small-caps;
+}
+
+.link-btn:hover {
+  text-shadow: -2px -2px 10px var(--clr12);
+}

@@ -1,0 +1,13 @@
+@import './base/helpers.css';
+@import './base/basic.css';
+@import './base/vars.css';
+
+@import './components/app-header.css';
+@import './components/app-footer.css';
+@import './components/toy-list.css';
+@import './components/toy-preview.css';
+@import './components/toy-filter.css';
+
+@import './views/toy-edit.css';
+@import './views/toy-details.css';
+@import './views/toy-app.css';

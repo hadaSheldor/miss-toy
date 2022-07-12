@@ -1,0 +1,35 @@
+.toy-preview {
+  border-radius: 20px;
+  background-color: var(--clr9);
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.prev-btn {
+  text-decoration: none;
+  margin: 1rem;
+  background-color: var(--clr11);
+  color: var(--clr1);
+  border: none;
+  border-radius: 5px;
+  height: fit-content;
+  cursor: pointer;
+  padding: 1rem;
+  font-variant: small-caps;
+}
+
+.prev-btn:hover {
+  opacity: 90%;
+}

@@ -1,0 +1,23 @@
+.add-toy-btn {
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 1rem;
+  background-color: var(--clr11);
+  color: var(--clr1);
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  top: 20px;
+  font-variant: small-caps;
+}
+
+.add-toy-btn:hover {
+  opacity: 90%;
+}
+
+.toy-app {
+  height: 90vh;
+}

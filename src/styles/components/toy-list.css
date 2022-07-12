@@ -1,0 +1,28 @@
+.toy-list {
+  height: 40%;
+  width: 40%;
+  gap: 1rem;
+  border-radius: 20px;
+  transition: 0.6s;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  width: 100%;
+}
+
+.toy-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* height: 50%; */
+  margin: 2rem;
+  background-color: var(--clr12);
+  border-radius: 1rem;
+}
+
+.toy-list-container button {
+  margin: 1rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
