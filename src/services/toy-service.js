@@ -31,7 +31,6 @@ function query(filterBy) {
 
 function getById(toyId) {
   return axios.get(_getUrl(toyId)).then((res) => res.data)
-  // return axios.get(_getUrl + toyId).then((res) => res.data)
   // return storageService.get(TOY_KEY, toyId)
 }
 

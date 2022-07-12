@@ -1,6 +1,7 @@
 <script>
 import { utilService } from '../services/util-service.js'
 export default {
+  name: 'toy-preview',
   props: {
     toy: Object,
   },
