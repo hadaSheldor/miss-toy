@@ -15,27 +15,19 @@ export default {
       let toys = this.toys
       const mappedLables = {}
       toys.forEach((toy) => {
-        if (toy.labels) {
-          toy.labels.forEach((label) => {
-            mappedLables[label]++
-          })
-        }
+        toy.labels.forEach((label) => {
+          if (mappedLables[label]) {
+            mappedLables[label].count++
+            mappedLables[label].sumPrice += toy.price
+          } else {
+            mappedLables[label] = { count: 1, sumPrice: toy.price }
+          }
+        })
       })
 
-      for (let label in mappedLables) {
-        const avgPrice = toys.reduce((acc, toy) => {
-          if (toy.labels) {
-            toy.labels.forEach((tl) => {
-              acc + (tl === label ? toy.price : 0)
-            })
-          }
-        }, 0)
-        console.log(avgPrice)
-        mappedLables[label] = avgPrice / mappedLables[label]
+      for (const key in mappedLables) {
+        mappedLables[key] = mappedLables[key].sumPrice / mappedLables[key].count
       }
-      console.log(mappedLables)
-      console.log(Object.keys(mappedLables))
-      console.log(Object.values(mappedLables))
       return {
         labels: Object.keys(mappedLables),
         datasets: [
