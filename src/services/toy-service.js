@@ -12,17 +12,26 @@ export const toyService = {
 
 const TOY_KEY = 'keyDB'
 
-const API = '//localhost:3030/api/toy/'
+// const API = '//localhost:3030/api/toy/'
 
 _createToys()
 
+function _getUrl(id = '') {
+  const BASE_URL =
+    process.env.NODE_ENV !== 'development'
+      ? '/api/toy'
+      : '//localhost:3030/api/toy/'
+  return `${BASE_URL}/${id}`
+}
+
 function query(filterBy) {
-  return axios.get(API, { params: filterBy }).then((res) => res.data)
+  return axios.get(_getUrl, { params: filterBy }).then((res) => res.data)
   // return storageService.query(TOY_KEY)
 }
 
 function getById(toyId) {
-  return axios.get(API + toyId).then((res) => res.data)
+  return axios.get(_getUrl(toyId)).then((res) => res.data)
+  // return axios.get(_getUrl + toyId).then((res) => res.data)
   // return storageService.get(TOY_KEY, toyId)
 }
 
@@ -39,9 +48,9 @@ function getEmptyToy() {
 
 function saveToy(toy) {
   if (toy._id) {
-    return axios.put(API + toy._id, toy).then((res) => res.data)
+    return axios.put(_getUrl(toy._id), toy).then((res) => res.data)
   } else {
-    return axios.post(API, toy).then((res) => res.data)
+    return axios.post(_getUrl, toy).then((res) => res.data)
   }
   // const savedToy = toy._id
   //   ? storageService.put(TOY_KEY, toy)
@@ -50,7 +59,7 @@ function saveToy(toy) {
 }
 
 function removeToy(toy) {
-  return axios.delete(API + toy._id).then((res) => res.data)
+  return axios.delete(_getUrl(toy._id)).then((res) => res.data)
   // return storageService.remove(TOY_KEY, toy)
 }
 
