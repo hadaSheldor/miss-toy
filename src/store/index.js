@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 import { toyService } from '../services/toy-service.js'
 import chartStore from './modules/chart-store.js'
 
-// create a store instance
 const store = createStore({
   strict: true,
   modules: {
@@ -77,7 +76,6 @@ const store = createStore({
       })
     },
   },
-  modules: {},
 })
 
 export default store

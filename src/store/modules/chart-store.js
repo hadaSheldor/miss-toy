@@ -1,17 +1,10 @@
-import { createStore } from 'vuex'
-
-const store = createStore({
-  strict: true,
-  state: {
-    toys: null,
-  },
+export default {
+  state: {},
   getters: {
-    toys({ toys }) {
-      return toys
+    chartData() {
+      console.log('from module')
     },
   },
   mutations: {},
   actions: {},
-})
-
-export default store
+}

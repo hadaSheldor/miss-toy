@@ -6,31 +6,13 @@ Chart.register(...registerables)
 
 export default {
   name: 'chart-data',
-  components: { DoughnutChart },
   props: { data: Object },
-  data() {
-    return {
-      testData: {
-        // labels: ['Battery', 'Outdoor', 'Wheels', 'Baby', 'Doll'],
-        // datasets: [
-        //   {
-        //     data: [30, 40, 60, 70, 5],
-        //     backgroundColor: [
-        //       '#77CEFF',
-        //       '#0079AF',
-        //       '#123E6B',
-        //       '#97B0C4',
-        //       '#A5C8ED',
-        //     ],
-        //   },
-        // ],
-      },
-    }
-  },
+  components: { DoughnutChart },
 }
 </script>
 
 <template>
-  <h1>Chart data</h1>
+  <h2>Chart data</h2>
+  <h3>Number of toys per lable</h3>
   <DoughnutChart :chartData="data" />
 </template>
