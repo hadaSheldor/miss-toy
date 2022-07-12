@@ -1,23 +1,16 @@
-<template>
-  <h1>Dashboard Stats</h1>
-  <DoughnutChart :chartData="testData" />
-</template>
-
 <script>
-import { Chart, registerables } from 'chart.js'
-import { DoughnutChart } from 'vue-chart-3'
+import chartCmp from '../components/chart.cmp.vue'
 
-Chart.register(...registerables)
 export default {
   name: 'dashboard',
-  components: { DoughnutChart },
-  data() {
-    return {
-      testData: {
-        labels: ['Paris', 'Nîmes', 'Toulon', 'Perpignan', 'Autre'],
+  components: { chartCmp },
+  computed: {
+    chartData() {
+      return {
+        labels: ['Battery', 'Outdoor', 'Wheels', 'Baby', 'Doll'],
         datasets: [
           {
-            data: [30, 40, 60, 70, 5],
+            data: [299, 299, 160, 299, 160],
             backgroundColor: [
               '#77CEFF',
               '#0079AF',
@@ -27,10 +20,13 @@ export default {
             ],
           },
         ],
-      },
-    }
+      }
+    },
   },
-
-  components: {},
 }
 </script>
+
+<template>
+  <h1>Dashboard Stats</h1>
+  <chart-cmp :data="chartData" />
+</template>
