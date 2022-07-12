@@ -20,12 +20,12 @@ function _getUrl(id = '') {
   const BASE_URL =
     process.env.NODE_ENV !== 'development'
       ? '/api/toy'
-      : '//localhost:3030/api/toy/'
+      : '//localhost:3030/api/toy'
   return `${BASE_URL}/${id}`
 }
 
 function query(filterBy) {
-  return axios.get(_getUrl, { params: filterBy }).then((res) => res.data)
+  return axios.get(_getUrl(), { params: filterBy }).then((res) => res.data)
   // return storageService.query(TOY_KEY)
 }
 
@@ -50,7 +50,7 @@ function saveToy(toy) {
   if (toy._id) {
     return axios.put(_getUrl(toy._id), toy).then((res) => res.data)
   } else {
-    return axios.post(_getUrl, toy).then((res) => res.data)
+    return axios.post(_getUrl(), toy).then((res) => res.data)
   }
   // const savedToy = toy._id
   //   ? storageService.put(TOY_KEY, toy)
