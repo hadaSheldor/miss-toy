@@ -15,5 +15,6 @@ export default defineConfig({
   build: {
     outDir: '../backend/public',
     assetsDir: './dist',
+    emptyOutDir: true,
   },
 })
