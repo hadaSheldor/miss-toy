@@ -12,22 +12,24 @@ export default {
       return this.$store.getters.toysToDisplay
     },
     chartData() {
-      let toys = this.toys
+      const toys = this.toys
       const mappedLables = {}
+
       toys.forEach((toy) => {
         toy.labels.forEach((label) => {
           if (mappedLables[label]) {
             mappedLables[label].count++
-            mappedLables[label].sumPrice += toy.price
+            mappedLables[label].avgPrice += toy.price
           } else {
-            mappedLables[label] = { count: 1, sumPrice: toy.price }
+            mappedLables[label] = { count: 1, avgPrice: toy.price }
           }
         })
       })
 
       for (const key in mappedLables) {
-        mappedLables[key] = mappedLables[key].sumPrice / mappedLables[key].count
+        mappedLables[key] = mappedLables[key].avgPrice / mappedLables[key].count
       }
+
       return {
         labels: Object.keys(mappedLables),
         datasets: [
