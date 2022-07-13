@@ -7,9 +7,11 @@ export default {
       markers: [
         {
           position: { lat: 32.434, lng: 34.9197 },
+          location: 'Hadera',
         },
         {
           position: { lat: 32.0132, lng: 34.748 },
+          location: 'Tel-Aviv',
         },
       ],
     }
@@ -39,4 +41,14 @@ export default {
       </GMapMarker>
     </GMapCluster>
   </GMapMap>
+  <section>
+    <h2>Locations</h2>
+    <button
+      v-for="marker in markers"
+      :key="marker"
+      @click="center = marker.position"
+    >
+      {{ marker.location }}
+    </button>
+  </section>
 </template>

@@ -3,6 +3,7 @@ export default {
   getters: {
     chartData() {
       console.log('from module')
+      return 'this is test'
     },
   },
   mutations: {},

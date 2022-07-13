@@ -1,22 +1,11 @@
-<template>
-  <div class="toy-app">
-    <router-link class="add-toy-btn" to="/toy/edit">Add toy</router-link>
-    <toy-filter @setFilter="setFilter" />
-    <toy-list @removeToy="removeToy" :toys="toys" />
-  </div>
-</template>
-
 <script>
 import toyList from '../components/toy-list.cmp.vue'
 import toyFilter from '../components/toy-filter.cmp.vue'
+
 export default {
-  template: ``,
   components: {
     toyList,
     toyFilter,
-  },
-  data() {
-    return {}
   },
   methods: {
     removeToy(toyId) {
@@ -34,3 +23,11 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="toy-app">
+    <router-link class="add-toy-btn" to="/toy/edit">Add toy</router-link>
+    <toy-filter @setFilter="setFilter" />
+    <toy-list @removeToy="removeToy" :toys="toys" />
+  </div>
+</template>

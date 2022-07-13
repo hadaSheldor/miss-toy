@@ -7,16 +7,5 @@
 </template>
 
 <script>
-export default {
-  props: [],
-  template: ``,
-  components: {},
-  data() {
-    return {}
-  },
-  methods: {},
-  computed: {},
-  created() {},
-  unmounted() {},
-}
+export default {}
 </script>

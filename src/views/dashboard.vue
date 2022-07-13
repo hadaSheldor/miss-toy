@@ -8,6 +8,9 @@ export default {
     this.$store.dispatch({ type: 'loadToys' })
   },
   computed: {
+    test() {
+      return this.$store.getters.chartData
+    },
     toys() {
       return this.$store.getters.toysToDisplay
     },
@@ -52,7 +55,7 @@ export default {
 
 <template>
   <section v-if="toys">
-    <h1>Dashboard Stats</h1>
+    <h1>Dashboard Stats {{ test }}</h1>
     <chart-cmp :data="chartData" />
   </section>
 </template>

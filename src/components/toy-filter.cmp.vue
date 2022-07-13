@@ -1,7 +1,5 @@
 <script>
 export default {
-  props: [],
-  components: {},
   data() {
     return {
       filterBy: {
@@ -23,10 +21,10 @@ export default {
       stockOptions: ['In stock', 'Out of stock'],
       sortOptions: [
         'Name - Increasing',
-        'Price - Increasing',
-        'Created - Increasing',
         'Name - Decreasing',
+        'Price - Increasing',
         'Price - Decreasing',
+        'Created - Increasing',
         'Created - Decreasing',
       ],
     }
@@ -34,11 +32,9 @@ export default {
   methods: {
     setFilter() {
       if (this.filterBy.byLabel[0] === '') this.filterBy.byLabel = []
-      console.log(this.filterBy.byLabel)
       this.$emit('setFilter', this.filterBy)
     },
   },
-  computed: {},
 }
 </script>
 
@@ -48,22 +44,22 @@ export default {
       @input="setFilter"
       v-model="filterBy.txt"
       type="text"
-      placeholder="Search by toy name..."
+      placeholder="Filter by name..."
     />
     <select @change="setFilter" v-model="filterBy.byLabel" multiple>
-      <option value="">Select label</option>
+      <option value="">Select a label...</option>
       <option v-for="(label, idx) in labels" :value="label" :key="idx">
         {{ label }}
       </option>
     </select>
     <select @change="setFilter" v-model="filterBy.status">
-      <option value="">Select status</option>
+      <option value="">Filter by status...</option>
       <option v-for="(opt, idx) in stockOptions" :value="opt" :key="idx">
         {{ opt }}
       </option>
     </select>
     <select @change="setFilter" v-model="filterBy.bySort">
-      <option value="">Select sort</option>
+      <option value="">Filter by sort...</option>
       <option v-for="(opt, idx) in sortOptions" :value="opt" :key="idx">
         {{ opt }}
       </option>

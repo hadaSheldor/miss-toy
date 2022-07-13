@@ -1,14 +1,11 @@
 <script>
 import { utilService } from '../services/util-service.js'
+
 export default {
   name: 'toy-preview',
   props: {
     toy: Object,
   },
-  data() {
-    return {}
-  },
-  methods: {},
   computed: {
     getTimeCreated() {
       return utilService.formatTime(this.toy.createdAt)
@@ -21,9 +18,9 @@ export default {
   <section class="toy-preview" v-if="toy">
     <div class="toy-details">
       <h2 class="toy-name">Name: {{ toy.name }}</h2>
-      <p class="toy-price">Price: {{ toy.price }}$</p>
+      <h3 class="toy-price">Price: {{ toy.price }}$</h3>
       <div class="toy-labels">
-        Labels:
+        <h3>Labels</h3>
         <p v-for="(label, idx) in toy.labels" :key="idx">
           {{ label }}
         </p>

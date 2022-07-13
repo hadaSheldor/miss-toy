@@ -19,7 +19,7 @@ _createToys()
 function _getUrl(id = '') {
   const BASE_URL =
     process.env.NODE_ENV !== 'development'
-      ? '/api/toy'
+      ? '/api/toy/'
       : '//localhost:3030/api/toy'
   return `${BASE_URL}/${id}`
 }
@@ -57,8 +57,8 @@ function saveToy(toy) {
   // return savedToy
 }
 
-function removeToy(toy) {
-  return axios.delete(_getUrl(toy._id)).then((res) => res.data)
+function removeToy(toyId) {
+  return axios.delete(_getUrl(toyId)).then((res) => res.data)
   // return storageService.remove(TOY_KEY, toy)
 }
 

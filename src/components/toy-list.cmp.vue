@@ -1,3 +1,16 @@
+<script>
+import toyPreview from './toy-preview.cmp.vue'
+
+export default {
+  props: {
+    toys: Array,
+  },
+  components: {
+    toyPreview,
+  },
+}
+</script>
+
 <template>
   <section v-if="toys" class="toy-list">
     <div class="toy-list-container" v-for="toy in toys" :key="toy._id">
@@ -6,21 +19,3 @@
     </div>
   </section>
 </template>
-<script>
-import toyPreview from './toy-preview.cmp.vue'
-export default {
-  props: {
-    toys: Array,
-  },
-  components: {
-    toyPreview,
-  },
-  data() {
-    return {}
-  },
-  methods: {},
-  computed: {},
-  created() {},
-  unmounted() {},
-}
-</script>

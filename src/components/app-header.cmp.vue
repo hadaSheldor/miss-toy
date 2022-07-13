@@ -10,7 +10,5 @@
 </template>
 
 <script>
-export default {
-  template: ``,
-}
+export default {}
 </script>
