@@ -5,14 +5,24 @@ import toyApp from '../views/toy-app.cmp.vue'
 import toyEdit from '../views/toy-edit.cmp.vue'
 import toyDetails from '../views/toy-details.cmp.vue'
 import dashboard from '../views/dashboard.vue'
+import loginSignup from '../views/login-signup.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/**',
+      redirect: loginSignup,
+    },
+    {
       path: '/',
       name: 'home',
       component: homePage,
+    },
+    {
+      path: '/login-signup',
+      name: 'login',
+      component: loginSignup,
     },
     {
       path: '/toy',

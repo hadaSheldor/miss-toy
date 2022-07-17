@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section class="main-layout">
     <app-header />
     <router-view />
     <app-footer />

@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-  <section class="toy-preview" v-if="toy">
-    <div class="toy-details">
+  <section class="cards-container" v-if="toy">
+    <div class="card">
       <h2 class="toy-name">Name: {{ toy.name }}</h2>
       <h3 class="toy-price">Price: {{ toy.price }}$</h3>
       <div class="toy-labels">

@@ -27,6 +27,8 @@ function makeId(length = 8) {
 }
 
 function formatTime(timeStamp) {
+  timeStamp = parseInt(timeStamp)
+  console.log(timeStamp)
   const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {
     month: 'long',
     day: 'numeric',

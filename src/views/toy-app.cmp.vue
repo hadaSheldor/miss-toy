@@ -21,6 +21,10 @@ export default {
       return this.$store.getters.toysToDisplay
     },
   },
+  created() {
+    const user = this.$store.getters.getUser
+    if (!user) this.$router.push('login-signup')
+  },
 }
 </script>
 

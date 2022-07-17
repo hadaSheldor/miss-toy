@@ -1,11 +1,13 @@
 import { createStore } from 'vuex'
 import { toyService } from '../services/toy-service.js'
 import chartStore from './modules/chart-store.js'
+import { userStore } from './modules/user.store.js'
 
 const store = createStore({
   strict: true,
   modules: {
     chartStore,
+    userStore,
   },
   state: {
     toys: null,
